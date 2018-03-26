@@ -1,0 +1,316 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>The WedSite</title>
+	<link href="{% static "img/favicon.png" %}" rel="icon" type="image/png">
+	<link rel="stylesheet" href="{% static "css/normalize.css" %}">
+	<link rel="stylesheet" href="{% static "css/foundation.min.css" %}">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+	<script src="{% static "js/vendor/modernizr.js" %}"></script>
+	<script src="{% static "js/vendor/jquery-1.12.4.min.js" %}"></script>
+</head>
+<body class="home">
+
+	<!-- Mobile navigation -->
+	<nav class="mobile-nav-menu">
+		<a class="mobile-logo" href="index.html">Matrimony HTML Template</a>
+		<a class="mobile-menu-btn" href="#"><span></span></a>
+		<div class="mobile-menu-container"></div>
+	</nav><!-- End .mobile-nav-menu -->
+
+	<!-- Header -->
+	<header class="default">
+		<nav>
+			<ul>
+				<li><a title="The Couple" href="#couple">The Couple</a></li>
+				<li><a title="Bridesmaids" href="#bridesmaid-gallery">Bridesmaids</a></li>
+				<li><a title="Groomsmen" href="#groomsmen-gallery">Groomsmen</a></li>
+				<li><a title="Gallery" href="#couple-gallery">Gallery</a></li>
+				<li><a title="Recent Posts" href="#recent-posts">Recent Posts</a></li>
+				<li><a title="RSVP &amp; Schedule" href="#rsvp">RSVP &amp; Schedule</a></li>
+				<li><a title="Blog" href="blog.html">Blog</a></li>
+				<li><a title="Contact" href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<h1>Kylie <em>&amp;</em> Alex</h1>
+		<span class="ceremony-date">September 21<sup>st</sup>, 2019</span>
+	</header>
+
+	<!-- Couple section -->
+	<section id="couple" class="row">
+		<div class="columns large-12">
+			<div class="columns large-4 medium-4">
+				<span class="headshot groom">
+					<img src="http://placehold.it/233x233/dddddd" alt="groom headshot" width="233">
+				</span>
+				<h3>Kylie</h3>
+				<p class="desc groom">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et vulputate magna, sed ornare elit. Nunc vitae quam sit amet dolor tincidunt sodales et ut tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vitae mi semper, vulputate
+				</p>
+			</div><!-- End .large-4 -->
+			<div class="columns large-4 medium-4">
+				<p class="giant-ampersand">&amp;</p>
+			</div><!-- End .large-4 -->
+			<div class="columns large-4 medium-4">
+				<span class="headshot bride">
+					<img src="http://placehold.it/233x233/dddddd" alt="bride headshot" width="233">
+				</span>
+				<h3>Alex</h3>
+				<p class="desc bride">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et vulputate magna, sed ornare elit. Nunc vitae quam sit amet dolor tincidunt sodales et ut tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vitae mi semper, vulputate
+				</p>
+			</div><!-- End .large-4 -->
+		</div><!-- End .large-12 -->
+	</section><!-- End #couple -->
+
+	<!-- RSVP section -->
+	<section id="rsvp">
+		<div class="rsvp-form-wrap">
+			<h2>Our Story</h2>
+			<p class="rsvp-desc">Come and join our wedding party Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nunc felectus placerat.</p>
+		</div><!-- End .rsvp-form-wrap -->
+	</section><!-- End #rsvp -->
+
+	<!-- Countdown section -->
+	<section id="countdown">
+		<h2>Countdown to our Wedding</h2>
+		<div id="default-countdown"></div>
+	</section><!-- End #countdown -->
+
+	<!-- Schedule section -->
+	<section id="schedule">
+		<div class="schedule-content-wrap">
+			<h2>Schedule</h2>
+			<div class="row">
+				<div class="columns large-6">
+					<strong><br>Bridal Shower</strong>
+					<img src="http://placehold.it/175x175" alt="">
+					<div class="event-details">
+						<p>16:00h - 17:00<br>
+						5281 York Road<br>
+						Holicong, Pennsylvania<br>
+						<a href="https://www.google.com/maps/place/The+Inn+at+Barley+Sheaf+Farm/@40.335704,-75.044462,17z/data=!4m7!3m6!1s0x0:0x7720f8a04d3c87e9!5m1!1s2018-04-01!8m2!3d40.3357037!4d-75.0444619?hl=en" target="_blank">VIEW DIRECTIONS</a></p>
+						<p>Lorem ipsum dolor sit amet, con pisi cing elit, sed do eiusmod tempor exercitationemut labore et dolore magna aliqua. Ut enim ad consequatur</p>
+					</div><!-- End .event-details -->
+				</div><!-- End .columns.large-6 -->
+				<div class="columns large-6">
+					<strong>Ceremony &<br>Reception</strong>
+					<img src="http://placehold.it/175x175" alt="">
+					<div class="event-details">
+						<p>16:00h - 17:00<br>
+						5281 York Road<br>
+						Holicong, Pennsylvania<br>
+						<a href="https://www.google.com/maps/place/The+Inn+at+Barley+Sheaf+Farm/@40.335704,-75.044462,17z/data=!4m7!3m6!1s0x0:0x7720f8a04d3c87e9!5m1!1s2018-04-01!8m2!3d40.3357037!4d-75.0444619?hl=en" target="_blank">VIEW DIRECTIONS</a></p>
+						<p>Lorem ipsum dolor sit amet, con pisi cing elit, sed do eiusmod tempor exercitationemut labore et dolore magna aliqua. Ut enim ad consequatur</p>
+					</div><!-- End .event-details -->
+				</div><!-- End .columns.large-6 -->
+			</div><!-- End .row -->
+		</div><!-- End .schedule-content-wrap -->
+	</section><!-- End #schedule -->
+
+	<!-- Bridesmaids gallery section -->
+	<section id="bridesmaid-gallery">
+		<h2>Bridesmaids</h2>
+		<nav class="dg-nav">
+			<span class="dg-prev">&lt;</span>
+			<span class="dg-next">&gt;</span>
+		</nav>
+		<div id="bridesmaid-carousel" class="dg-container">
+			<div class="dg-wrapper">
+
+				<!-- begin bridesmaid image -->
+				<a href="#" style="background:url(http://placehold.it/429x294) no-repeat 50% center; background-size:cover;">
+					<img src="http://placehold.it/429x294" alt="maid of honor">
+					<div>
+						<span class="guest-name">Angela Romero</span>
+						<span class="guest-title">MAID OF HONOUR</span>
+						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
+	equat odictetur adipiscing elit.</span>
+					</div>
+				</a>
+				<!-- end bridesmaid image -->
+
+				<!-- begin bridesmaid image -->
+				<a href="#" style="background:url(http://placehold.it/429x294) no-repeat 50% center; background-size:cover;">
+					<img src="http://placehold.it/429x294" alt="bridesmaid">
+					<div>
+						<span class="guest-name">Sue Storm</span>
+						<span class="guest-title">Bridesmaid</span>
+						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
+	equat odictetur adipiscing elit.</span>
+					</div>
+				</a>
+				<!-- end bridesmaid image -->
+
+				<!-- begin bridesmaid image -->
+				<a href="#" style="background:url(http://placehold.it/429x294) no-repeat 50% center; background-size:cover;">
+					<img src="http://placehold.it/429x294" alt="bridesmaid">
+					<div>
+						<span class="guest-name">Jean Grey</span>
+						<span class="guest-title">Bridesmaid</span>
+						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
+	equat odictetur adipiscing elit.</span>
+					</div>
+				</a>
+				<!-- end bridesmaid image -->
+
+			</div><!-- End .dg-wrapper -->
+		</div><!-- End #bridesmaid-carousel -->
+		<div class="bridemaids-mobile-slider-wrap"><div class="bridemaids-mobile-slider"></div></div>
+	</section><!-- End #bridesmaid-gallery -->
+
+	<!-- Groomsmen gallery section -->
+	<section id="groomsmen-gallery">
+		<h2>Groomsmen</h2>
+		<nav class="dg-nav-g">
+			<span class="dg-prev-g">&lt;</span>
+			<span class="dg-next-g">&gt;</span>
+		</nav>
+		<div id="groomsmen-carousel" class="dg-container">
+			<div class="dg-wrapper-g">
+
+				<!-- begin groomsman image -->
+				<a href="#" style="background:url(http://placehold.it/429x294) no-repeat center; background-size:cover;">
+					<img src="http://placehold.it/429x294" alt="groomsman">
+					<div>
+						<span class="guest-name">Nick Fury</span>
+						<span class="guest-title">Best Man</span>
+						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
+	equat odictetur adipiscing elit.</span>
+					</div>
+				</a>
+				<!-- end groomsman image -->
+
+				<!-- begin groomsman image -->
+				<a href="#" style="background:url(http://placehold.it/429x294) no-repeat center; background-size:cover;">
+					<img src="http://placehold.it/429x294" alt="groomsman">
+					<div>
+						<span class="guest-name">Peter Parker</span>
+						<span class="guest-title">Groomsman</span>
+						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
+	equat odictetur adipiscing elit.</span>
+					</div>
+				</a>
+				<!-- end groomsman image -->
+
+				<!-- begin groomsman image -->
+				<a href="#" style="background:url(http://placehold.it/429x294) no-repeat center; background-size:cover;">
+					<img src="http://placehold.it/429x294" alt="groomsman">
+					<div>
+						<span class="guest-name">Scott Summers</span>
+						<span class="guest-title">Groomsman</span>
+						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
+	equat odictetur adipiscing elit.</span>
+					</div>
+				</a>
+				<!-- end groomsman image -->
+
+			</div><!-- End .dg-wrapper-g -->
+		</div><!-- End #groomsmen-carousel -->
+		<div class="groomsmen-mobile-slider-wrap"><div class="groomsmen-mobile-slider"></div></div>
+	</section><!-- End #groomsmen-gallery -->
+
+	<!-- Couple gallery section -->
+	<section id="couple-gallery">
+		<h2>Gallery</h2>
+		<div class="il-scattered-gallery">
+			<a href="#"><img src="http://placehold.it/1000x667/eeeeee" alt=""></a>
+			<a href="#"><img src="http://placehold.it/1000x667/eeeeee" alt=""></a>
+			<a href="#"><img src="http://placehold.it/1000x667/eeeeee" alt=""></a>
+			<a href="#"><img src="http://placehold.it/1000x667/eeeeee" alt=""></a>
+			<a href="#"><img src="http://placehold.it/1000x667/eeeeee" alt=""></a>
+			<a href="#"><img src="http://placehold.it/1000x667/eeeeee" alt=""></a>
+			<a href="#"><img src="http://placehold.it/1000x667/eeeeee" alt=""></a>
+		</div>
+		<div class="couple-slideshow-wrap">
+			<ul id="couple-slideshow"></ul>
+			<ul class="couple-thumbs"></ul>
+		</div><!-- End .couple-slideshow-wrap -->
+		<a id="gallery-launcher" href="#">Click to view gallery</a>
+		<div class="couple-mobile-slider-wrap"><div class="couple-mobile-slider"></div></div>
+	</section><!-- End #couple-gallery -->
+
+	<!-- Recent posts section -->
+	<section id="recent-posts">
+		<h2>Recent Blog Posts</h2>
+		<div class="blog-posts-wrap">
+
+			<!-- begin blog post -->
+			<div class="blog-post columns large-4 medium-4 small-12">
+				<img src="http://placehold.it/294x232" alt="">
+				<div class="post-text">
+					<h3>Our Love Story</h3>
+					<span class="post-meta">By admin | Oct 22, 2017  |  Blog</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ullam rhoncus, leo at Lorem...</p>
+					<a href="single.html" class="read-more">Read more</a>
+				</div>
+			</div>
+			<!-- end blog post -->
+
+			<!-- begin blog post -->
+			<div class="blog-post columns large-4 medium-4 small-12">
+				<img src="http://placehold.it/294x232" alt="">
+				<div class="post-text">
+					<h3>Bachelor's Party</h3>
+					<span class="post-meta">By admin | Oct 22, 2017  |  Blog</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ullam rhoncus, leo at Lorem...</p>
+					<a href="single.html" class="read-more">Read more</a>
+				</div>
+			</div>
+			<!-- end blog post -->
+
+			<!-- begin blog post -->
+			<div class="blog-post columns large-4 medium-4 small-12">
+				<img src="http://placehold.it/294x232" alt="">
+				<div class="post-text">
+					<h3>Bridal Party</h3>
+					<span class="post-meta">By admin | Oct 22, 2017  |  Blog</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ullam rhoncus, leo at Lorem...</p>
+					<a href="single.html" class="read-more">Read more</a>
+				</div>
+			</div>
+			<!-- end blog post -->
+
+		</div><!-- End .blog-posts-wrap -->
+	</section><!-- End #recent-posts -->
+
+	<!-- Contact section -->
+	<section id="contact">
+		<div class="contact-form-wrap">
+			<h2>Contact</h2>  {# TODO #}
+			<p class="contact-desc">Any further questions please send us a message in the comments box below or contact us at <em>415 183 1239</em></p>
+			<form id="contact-form" action="sendemail.php" method="post" data-abide>
+				<div class="columns large-12">
+					<label for="your-name">Name (required)</label>
+					<input id="your-name" name="your_name" type="text" placeholder="John Doe" required pattern="[a-zA-Z]+">
+
+					<label for="your-email">Email Address (required)</label>
+					<input id="your-email" name="your_email" type="email" placeholder="johndoe@email.com" required>
+					<small class="error">Please enter a valid email.</small>
+
+					<label for="comments">Comment (required)</label>
+					<textarea name="comments" id="comments" placeholder="Comments..." required></textarea>
+				</div><!-- End .large-12 -->
+				<div class="columns large-12">
+					<input class="button" type="submit" value="Submit" name="contact_submit">
+				</div><!-- End .large-12 -->
+			</form>
+		</div><!-- End .contact-form-wrap -->
+	</section><!-- End #contact -->
+
+	<footer>
+		<p>
+			&copy; 2018 Kylex International, Inc. Built with nuptial bliss (and Django, for some reason) in Philadelphia.
+		</p>
+	</footer>
+
+	<script src="{% static "js/foundation.min.js" %}"></script>
+	<script src="{% static "js/plugins.js" %}"></script>
+	<script src="{% static "js/scripts.js" %}"></script>
+</body>
+</html>
