@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>The WedSite</title>
+	<title>The WedSite #kylex</title>
 	<link href="{% static "img/favicon.png" %}" rel="icon" type="image/png">
 	<link rel="stylesheet" href="{% static "css/normalize.css" %}">
 	<link rel="stylesheet" href="{% static "css/foundation.min.css" %}">
@@ -18,7 +18,7 @@
 
 	<!-- Mobile navigation -->
 	<nav class="mobile-nav-menu">
-		<a class="mobile-logo" href="index.html">Matrimony HTML Template</a>
+		<a class="mobile-logo" href="index.html">Kylie and Alex's WedSite</a>
 		<a class="mobile-menu-btn" href="#"><span></span></a>
 		<div class="mobile-menu-container"></div>
 	</nav><!-- End .mobile-nav-menu -->
@@ -37,7 +37,7 @@
 				<li><a title="Contact" href="#contact">Contact</a></li>
 			</ul>
 		</nav>
-		<h1>Kylie <em>&amp;</em> Alex</h1>
+		<h1>Alex <em>&amp;</em> Kylie</h1>
 		<span class="ceremony-date">September 21<sup>st</sup>, 2019</span>
 	</header>
 
@@ -45,24 +45,24 @@
 	<section id="couple" class="row">
 		<div class="columns large-12">
 			<div class="columns large-4 medium-4">
-				<span class="headshot groom">
-					<img src="http://placehold.it/233x233/dddddd" alt="groom headshot" width="233">
+				<span class="headshot bride">
+					<img src="{% static "img/alex-head.jpg" %}" alt="alex headshot" width="233">
 				</span>
-				<h3>Kylie</h3>
-				<p class="desc groom">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et vulputate magna, sed ornare elit. Nunc vitae quam sit amet dolor tincidunt sodales et ut tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vitae mi semper, vulputate
+				<h3>Alex</h3>
+				<p class="desc bride">
+					Alex is a convicted felon. He enjoys gin, tonic and suffering.
 				</p>
 			</div><!-- End .large-4 -->
 			<div class="columns large-4 medium-4">
 				<p class="giant-ampersand">&amp;</p>
 			</div><!-- End .large-4 -->
 			<div class="columns large-4 medium-4">
-				<span class="headshot bride">
-					<img src="http://placehold.it/233x233/dddddd" alt="bride headshot" width="233">
+				<span class="headshot groom">
+					<img src="{% static "img/kylie-head.jpg" %}" alt="kylie headshot" width="233">
 				</span>
-				<h3>Alex</h3>
-				<p class="desc bride">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et vulputate magna, sed ornare elit. Nunc vitae quam sit amet dolor tincidunt sodales et ut tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam vitae mi semper, vulputate
+				<h3>Kylie</h3>
+				<p class="desc groom">
+					Kylie is highly critical but means well.
 				</p>
 			</div><!-- End .large-4 -->
 		</div><!-- End .large-12 -->
@@ -282,8 +282,8 @@
 	<!-- Contact section -->
 	<section id="contact">
 		<div class="contact-form-wrap">
-			<h2>Contact</h2>  {# TODO #}
-			<p class="contact-desc">Any further questions please send us a message in the comments box below or contact us at <em>415 183 1239</em></p>
+			<h2>Contact</h2>  {# TODO: Hook up mail sender #}
+			<p class="contact-desc">Any further questions? Please send us a message in the comments box below.</p>
 			<form id="contact-form" action="sendemail.php" method="post" data-abide>
 				<div class="columns large-12">
 					<label for="your-name">Name (required)</label>

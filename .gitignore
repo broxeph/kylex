@@ -1,5 +1,4 @@
 /static
 /venv
 /.idea
-*.sqlite3
 *.pyc
