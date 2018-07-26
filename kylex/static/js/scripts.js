@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   var winWidth = $(window).width(), winHeight = $(window).height(), resizeTimer;
 
-  var weddDay = new Date(2019, 9, 21);// YYYY, M, D -- no leading zeros
+  var weddDay = new Date(2019, 9-1, 21);// YYYY, M, D -- no leading zeros
   $('#default-countdown').countdown({until: weddDay, format: 'YOD'});
 
   var navItems = $('header nav').html();// Get navigation links from main menu

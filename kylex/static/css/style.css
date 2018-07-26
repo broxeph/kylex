@@ -26,6 +26,7 @@ h1 {
   line-height: 1;
   margin-top: 18.8125rem;
   text-shadow: 0px 5px 4px rgba(16, 16, 16, 0.34);
+  padding-left: 30%;
 }
 h1 em {
   font-style: normal;
@@ -197,7 +198,6 @@ header.fixed {
   display: none;
 }
 header.fixed nav {
-  padding-top: 5.6875rem;
   position: fixed;
   z-index: 2001;
   background: #fff;
@@ -228,7 +228,6 @@ header.fixed nav ul li a {
   font-size: 0.875rem;
   font-weight: 400;
   text-transform: uppercase;
-  color: #fff !important;
   letter-spacing: 2px;
   color: #282828 !important;
   position: relative;
@@ -271,7 +270,6 @@ footer {
 }
 footer p {
   line-height: 1;
-  margin: 0;
   padding: 0;
   font-family: "Raleway", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -323,7 +321,6 @@ footer .social-icons a:first-child {
 .mobile-nav-menu .mobile-logo {
   float: left;
   width: 100%;
-  text-align: center;
   padding: 1.125rem 0;
   margin: 0;
   font-family: "Prata", serif;
@@ -504,7 +501,7 @@ header.default nav ul li a {
   font-size: 0.875rem;
   font-weight: 400;
   text-transform: uppercase;
-  color: #fff !important;
+  color: #282828 !important;
   letter-spacing: 2px;
   position: relative;
   margin-left: 2.75rem;
@@ -546,6 +543,7 @@ header.default nav ul li.current-page a:before {
   line-height: 1;
   margin-top: 1.4375rem;
   position: relative;
+  padding-left: 30%;
 }
 .ceremony-date sup {
   font-size: 0.875rem;
@@ -558,7 +556,8 @@ header.default nav ul li.current-page a:before {
   position: absolute;
   left: 50%;
   bottom: -31px;
-  margin-left: -60px;
+  padding-left: 30%;
+  margin-left: 0px;
 }
 
 body.home header {
@@ -572,9 +571,8 @@ COUPLE SECTION
 --------------------------------------------------------------*/
 #couple {
   max-width: none;
-  height: 889px;
-  background: url("http://placehold.it/1900x889/eeeeee") center top no-repeat;
-  background-size: cover;
+  height: 400px;
+  background-color: #ddd;
   margin-top: 826px;
   position: relative;
   z-index: 2;
@@ -642,17 +640,82 @@ COUPLE SECTION
 }
 
 /*--------------------------------------------------------------
+RSVP SECTION
+--------------------------------------------------------------*/
+#rsvp {
+  width: 100%;
+  height: 973px;
+  background: url("/static/img/our-story.jpg") center top no-repeat;
+  background-size: cover;
+  padding-top: 7.5rem;
+  position: relative;
+  z-index: 2;
+}
+#rsvp h2 {
+  color: #282828;
+  padding-bottom: 1.25rem;
+}
+#rsvp h2:after {
+  width: 72px;
+  margin-left: -36px;
+}
+
+.rsvp-form-wrap {
+  background: #fff;
+  width: 663px;
+  height: 732px;
+  margin: 0 auto;
+  padding-top: 5rem;
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.rsvp-form-wrap.on-screen {
+  top: 0;
+  opacity: 1;
+}
+.rsvp-form-wrap form {
+  background: #fff;
+  width: 328px;
+  margin: 0 auto;
+}
+.rsvp-form-wrap .large-12:first-child {
+  margin-bottom: 1.5rem;
+}
+.rsvp-form-wrap .large-12:first-child + .large-12 {
+  margin-bottom: 3px;
+}
+
+.rsvp-desc {
+  text-align: center;
+  color: #818181;
+  width: 326px;
+  margin: 1.3125rem auto 3.4375rem;
+  font-family: "Lato", sans-serif;
+  font-size: 0.875rem;
+  line-height: 19px;
+  letter-spacing: 1px;
+}
+
+/*--------------------------------------------------------------
 COUNTDOWN SECTION
 --------------------------------------------------------------*/
 #countdown {
   max-width: none;
   height: 689px;
-  background: url("http://placehold.it/1900x689") center top no-repeat;
+  background: url("/static/img/cheers.jpg") center top no-repeat;
   background-size: cover;
   padding-top: 7.8125rem;
   position: relative;
   z-index: 2;
   overflow: hidden;
+  background-position-y: -500px;
 }
 #countdown h2 {
   position: relative;
@@ -697,6 +760,91 @@ COUNTDOWN SECTION
 }
 
 /*--------------------------------------------------------------
+SCHEDULE SECTION
+--------------------------------------------------------------*/
+#schedule {
+  width: 100%;
+  height: 780px;
+  background: url("/static/img/barley-sheaf-outside.jpg") center top no-repeat;
+  background-size: cover;
+  padding-top: 7.875rem;
+  position: relative;
+  z-index: 2;
+}
+#schedule h2 {
+  color: black;
+  padding-bottom: 1.1875rem;
+}
+#schedule h2:after {
+  width: 84px;
+  margin-left: -42px;
+}
+#schedule .row {
+  max-width: 600px;
+}
+#schedule .large-6 {
+  text-align: center;
+  margin-top: 2rem;
+  max-width: 300px;
+}
+#schedule .large-6 > strong {
+  display: block;
+  font-family: "Prata", serif;
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: black;
+  margin-bottom: 1.25rem;
+}
+#schedule .large-6 > img {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 6px solid #f3f3f3;
+}
+#schedule .large-6 p {
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: black;
+  letter-spacing: 1px;
+  margin-top: 1.5625rem;
+  margin-bottom: 0;
+  line-height: 18px;
+}
+#schedule .large-6 p + p {
+  margin-top: 1.1875rem;
+}
+#schedule .large-6 a {
+  font-weight: 700;
+  color: black;
+  text-decoration: underline;
+}
+#schedule .large-6 a:hover {
+  text-decoration: none;
+}
+
+.schedule-content-wrap {
+  background: #fff;
+  width: 663px;
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  right: -100px;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.schedule-content-wrap.on-screen {
+  right: 0;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
 BRIDESMAIDS GALLERY
 --------------------------------------------------------------*/
 #bridesmaid-gallery {
@@ -704,8 +852,7 @@ BRIDESMAIDS GALLERY
   margin-top: 0;
   padding-top: 5.125rem;
   height: 723px;
-  background: url("http://placehold.it/1900x723/f0f0f0") center top no-repeat;
-  background-size: cover;
+  background-color: #ccc;
   position: relative;
 }
 #bridesmaid-gallery h2 {
@@ -732,8 +879,7 @@ GROOMSMEN GALLERY
   margin-top: 0;
   padding-top: 5.375rem;
   height: 723px;
-  background: url("http://placehold.it/1900x723/333333") center top no-repeat;
-  background-size: cover;
+  background-color: #444;
   position: relative;
 }
 #groomsmen-gallery h2 {
@@ -759,8 +905,7 @@ COUPLE GALLERY
 #couple-gallery {
   width: 100%;
   height: 1198px;
-  background: url("http://placehold.it/1900x1198") center top no-repeat;
-  background-size: cover;
+  background-color: #ccc;
   padding-top: 5.375rem;
   text-align: center;
   position: relative;
@@ -941,7 +1086,7 @@ COUPLE GALLERY
   text-transform: uppercase;
   color: #fff;
   font-family: "Lato", sans-serif;
-  font-size: 0.75rem;
+  font-size: 1rem;
   position: relative;
   z-index: 2;
 }
@@ -954,257 +1099,12 @@ COUPLE GALLERY
 }
 
 /*--------------------------------------------------------------
-RECENT POSTS
---------------------------------------------------------------*/
-#recent-posts {
-  width: 100%;
-  height: 865px;
-  background: #f5f5f5;
-  padding-top: 8.1875rem;
-  position: relative;
-  z-index: 2;
-}
-#recent-posts h2 {
-  color: #000;
-}
-#recent-posts h2:after {
-  width: 124px;
-  margin-left: -62px;
-  bottom: 6px;
-}
-#recent-posts .blog-posts-wrap {
-  margin: 3.5rem auto 0;
-}
-#recent-posts .blog-post {
-  float: left;
-}
-#recent-posts .blog-post .post-text {
-  background: #fff;
-  border: 1px solid #dedede;
-}
-#recent-posts .blog-post .post-meta,
-#recent-posts .blog-post p {
-  font-family: "Lato", sans-serif;
-  font-size: 0.75rem;
-  text-align: center;
-  color: #282828;
-}
-#recent-posts .blog-post .post-meta {
-  display: block;
-  font-weight: 300;
-  margin-bottom: 1.125rem;
-  letter-spacing: 1px;
-}
-#recent-posts .blog-post p {
-  font-weight: 400;
-  letter-spacing: 1px;
-  padding: 0 45px;
-  line-height: 17px;
-  margin-bottom: 2.125rem;
-}
-#recent-posts .blog-post .read-more {
-  display: block;
-  font-family: "Raleway", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #003768;
-  text-align: center;
-  line-height: 1;
-  padding: 15px 5px;
-  border-top: 1px solid #dedede;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-}
-
-body.home #recent-posts .blog-posts-wrap {
-  width: 960px;
-}
-body.home .blog-post {
-  position: relative;
-  opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-body.home .blog-post:first-child {
-  left: -100px;
-}
-body.home .blog-post:first-child.on-screen {
-  opacity: 1;
-  left: 0;
-}
-body.home .blog-post:first-child + .blog-post {
-  top: 100px;
-}
-body.home .blog-post:first-child + .blog-post.on-screen {
-  opacity: 1;
-  top: 0;
-}
-body.home .blog-post:first-child + .blog-post + .blog-post {
-  left: 100px;
-}
-body.home .blog-post:first-child + .blog-post + .blog-post.on-screen {
-  opacity: 1;
-  left: 0;
-}
-
-/*--------------------------------------------------------------
-RSVP SECTION
---------------------------------------------------------------*/
-#rsvp {
-  width: 100%;
-  height: 973px;
-  background: url("http://placehold.it/1900x973/eeeeee") center top no-repeat;
-  background-size: cover;
-  padding-top: 7.5rem;
-  position: relative;
-  z-index: 2;
-}
-#rsvp h2 {
-  color: #282828;
-  padding-bottom: 1.25rem;
-}
-#rsvp h2:after {
-  width: 72px;
-  margin-left: -36px;
-}
-
-.rsvp-form-wrap {
-  background: #fff;
-  width: 663px;
-  height: 732px;
-  margin: 0 auto;
-  padding-top: 5rem;
-  position: relative;
-  top: 100px;
-  opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-.rsvp-form-wrap.on-screen {
-  top: 0;
-  opacity: 1;
-}
-.rsvp-form-wrap form {
-  background: #fff;
-  width: 328px;
-  margin: 0 auto;
-}
-.rsvp-form-wrap .large-12:first-child {
-  margin-bottom: 1.5rem;
-}
-.rsvp-form-wrap .large-12:first-child + .large-12 {
-  margin-bottom: 3px;
-}
-
-.rsvp-desc {
-  text-align: center;
-  color: #818181;
-  width: 326px;
-  margin: 1.3125rem auto 3.4375rem;
-  font-family: "Lato", sans-serif;
-  font-size: 0.875rem;
-  line-height: 19px;
-  letter-spacing: 1px;
-}
-
-/*--------------------------------------------------------------
-SCHEDULE SECTION
---------------------------------------------------------------*/
-#schedule {
-  width: 100%;
-  height: 980px;
-  background: url("/static/img/barley-sheaf-outside.jpg") center top no-repeat;
-  background-size: cover;
-  padding-top: 7.875rem;
-  position: relative;
-  z-index: 2;
-}
-#schedule h2 {
-  color: black;
-  padding-bottom: 1.1875rem;
-}
-#schedule h2:after {
-  width: 84px;
-  margin-left: -42px;
-}
-#schedule .row {
-  max-width: 600px;
-}
-#schedule .large-6 {
-  text-align: center;
-  margin-top: 4.8125rem;
-  max-width: 300px;
-}
-#schedule .large-6 > strong {
-  display: block;
-  font-family: "Prata", serif;
-  font-size: 1.125rem;
-  font-weight: normal;
-  color: black;
-  margin-bottom: 1.25rem;
-}
-#schedule .large-6 > img {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  border: 6px solid #f3f3f3;
-}
-#schedule .large-6 p {
-  font-family: "Lato", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: black;
-  letter-spacing: 1px;
-  margin-top: 1.5625rem;
-  margin-bottom: 0;
-  line-height: 18px;
-}
-#schedule .large-6 p + p {
-  margin-top: 1.1875rem;
-}
-#schedule .large-6 a {
-  font-weight: 700;
-  color: black;
-  text-decoration: underline;
-}
-#schedule .large-6 a:hover {
-  text-decoration: none;
-}
-
-.schedule-content-wrap {
-  background: #fff;
-  width: 663px;
-  height: 732px;
-  margin: 0 auto;
-  padding-top: 5rem;
-  position: relative;
-  right: -100px;
-  opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-.schedule-content-wrap.on-screen {
-  right: 0;
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-/*--------------------------------------------------------------
 CONTACT SECTION
 --------------------------------------------------------------*/
 #contact {
   width: 100%;
   height: 976px;
-  background: url("http://placehold.it/1900x976/eeeeee") center top no-repeat;
+  background: url("/static/img/pillar.jpg") center top no-repeat;
   background-size: cover;
   padding-top: 6.75rem;
   position: relative;
@@ -1228,6 +1128,7 @@ CONTACT SECTION
   position: relative;
   left: -100px;
   opacity: 0;
+  background-color: rgba(255, 255, 255, 0.7);
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
   -ms-transition: all 1s ease-in-out;
@@ -1235,7 +1136,7 @@ CONTACT SECTION
   transition: all 1s ease-in-out;
 }
 .contact-form-wrap.on-screen {
-  left: 0;
+  left: -200px;
   opacity: 1;
 }
 .contact-form-wrap form {
@@ -2422,12 +2323,24 @@ SINGLE POST
 }
 /** Tablet Portrait **/
 @media screen and (max-width: 768px) {
+  header h1 {
+    color: black;
+  }
+
+  header span.ceremony-date {
+    color: black;
+  }
+
   .giant-ampersand {
     text-indent: 0;
   }
 
   #couple .columns.large-4 > strong {
     font-size: 2.5rem;
+  }
+
+  #countdown {
+    background-position-y: inherit;
   }
 
   .single-post {
@@ -2566,12 +2479,13 @@ SINGLE POST
 }
 @media screen and (max-width: 599px) {
   #schedule {
-    background: #fff;
     height: auto;
-    padding-bottom: 3.125rem;
   }
   #schedule .large-6 {
     max-width: none;
+  }
+  .schedule-content-wrap {
+    padding-bottom: 3.125rem;
   }
 }
 @media screen and (max-width: 541px) {
@@ -2607,6 +2521,10 @@ SINGLE POST
 }
 /** Mobile **/
 @media screen and (max-width: 480px) {
+  header.default {
+    background-position-x: -280px;
+  }
+
   h1,
   .blog h1,
   .single h1 {
@@ -2624,6 +2542,10 @@ SINGLE POST
 
   #default-countdown {
     margin-top: 2.5rem;
+  }
+
+  #rsvp {
+    background-position-x: -280px;
   }
 
   #bridesmaid-gallery,
