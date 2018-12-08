@@ -1,4 +1,4 @@
 /static
-/venv
+/.env
 /.idea
 *.pyc
