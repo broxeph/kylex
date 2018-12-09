@@ -7,7 +7,9 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 DEBUG = os.getenv('DEBUG', False)
 
 if not DEBUG:
-    ALLOWED_HOSTS = ['kylex-wedding.herokuapp.com', 'kylex.name']
+    ALLOWED_HOSTS = ['www.kylex-wedding.herokuapp.com', 'www.kylex.name']
+
+PREPEND_WWW = True
 
 
 # Application definition
