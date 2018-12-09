@@ -8,8 +8,7 @@ DEBUG = os.getenv('DEBUG', False)
 
 if not DEBUG:
     ALLOWED_HOSTS = ['www.kylex-wedding.herokuapp.com', 'www.kylex.name']
-
-PREPEND_WWW = True
+    PREPEND_WWW = True
 
 
 # Application definition
