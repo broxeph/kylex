@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:300,400,500|Prata|Lato:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500|Prata|Lato:300,400,700);
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -1500,7 +1500,7 @@ BLOG
 .blog header.default,
 .single header.default {
   height: 618px;
-  background: url("http://placehold.it/1900x618") center top no-repeat;
+  background: url("https://placehold.it/1900x618") center top no-repeat;
   background-size: cover;
 }
 .blog header.default h1,
@@ -1672,7 +1672,7 @@ BLOG
 SINGLE POST
 --------------------------------------------------------------*/
 .single header.default {
-  background: url("http://placehold.it/1900x618") center top no-repeat;
+  background: url("https://placehold.it/1900x618") center top no-repeat;
   background-size: cover;
 }
 .single .container {
