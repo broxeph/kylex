@@ -306,13 +306,14 @@
 		<div class="contact-form-wrap">
 			<h2>Contact</h2>  {# TODO: Hook up mail sender #}
 			<p class="contact-desc">Any further questions? Please send us a message in the comments box below.</p>
-			<form id="contact-form" action="sendemail.php" method="post" data-abide>
+			<form id="contact-form" action="#" method="post" data-abide>
+        {% csrf_token %}
 				<div class="columns large-12">
-					<label for="your-name">Name (required)</label>
-					<input id="your-name" name="your_name" type="text" placeholder="John Doe" required pattern="[a-zA-Z]+">
+					<label for="name">Name (required)</label>
+					<input id="name" name="name" type="text" placeholder="John Doe" required pattern="[a-zA-Z]+">
 
-					<label for="your-email">Email Address (required)</label>
-					<input id="your-email" name="your_email" type="email" placeholder="johndoe@email.com" required>
+					<label for="email">Email Address (required)</label>
+					<input id="email" name="email" type="email" placeholder="johndoe@email.com" required>
 					<small class="error">Please enter a valid email.</small>
 
 					<label for="comments">Comment (required)</label>
