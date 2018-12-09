@@ -17,7 +17,7 @@ class Home(View):
     def post(self, request):
         form = ContactForm(request.POST)
         if form.is_valid():
-            logger.info(f'Sending email to {settings.TO_EMAIL}')
+            logger.info(f'Sending email to {settings.EMAIL_HOST_USER}')
             send_mail(
                 subject="Spam from your dumb wedding guests",
                 message=form.cleaned_data['comments'],
