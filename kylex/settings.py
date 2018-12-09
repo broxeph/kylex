@@ -2,7 +2,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 DEBUG = os.environ.get('DEBUG', False)
@@ -15,6 +14,7 @@ if not DEBUG:
 
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
+    'kylex',
 ]
 
 MIDDLEWARE = [
@@ -55,10 +55,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'kylex/static'),
-)
+STATIC_ROOT = 'static/'
 
 
 # Email
