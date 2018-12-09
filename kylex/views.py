@@ -8,11 +8,6 @@ from .forms import ContactForm
 
 class Home(View):
     def get(self, request):
-        import logging
-        logger = logging.getLogger(__name__)
-        logger.error('testing error logging!')
-        logger.info('testing info logging')
-        logger.debug('testing debug logging')
         return render(request, 'home.html')
 
     def post(self, request):
