@@ -1,1 +1,1 @@
-web: gunicorn kylex.wsgi
+web: gunicorn kylex.wsgi --log-file=-
