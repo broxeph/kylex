@@ -102,3 +102,5 @@ EMAIL_HOST_USER = 'alex.kylie.8@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

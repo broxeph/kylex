@@ -1,7 +1,7 @@
 import logging
 
 from django.conf import settings
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.shortcuts import render
 from django.views import View
 
@@ -18,12 +18,14 @@ class Home(View):
         form = ContactForm(request.POST)
         if form.is_valid():
             logger.info(f'Sending email to {settings.EMAIL_HOST_USER}')
-            send_mail(
-                subject="Spam from your dumb wedding guests",
-                message=form.cleaned_data['comments'],
+            email = EmailMessage(
+                subject=f"Wedding spam from {form.cleaned_data['name']}",
+                body=form.cleaned_data['comments'],
                 from_email=form.cleaned_data['email'],
-                recipient_list=[settings.EMAIL_HOST_USER],
+                to=[settings.EMAIL_HOST_USER],
+                reply_to=[form.cleaned_data['email']],
             )
+            email.send()
         else:
             logger.info(f'Form invalid. Errors: {form.errors}')
 
