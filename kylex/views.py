@@ -21,8 +21,8 @@ class Home(View):
             send_mail(
                 subject="Spam from your dumb wedding guests",
                 message=form.cleaned_data['comments'],
-                from_email=settings.FROM_EMAIL,
-                recipient_list=[settings.TO_EMAIL],
+                from_email=form.cleaned_data['email'],
+                recipient_list=[settings.EMAIL_HOST_USER],
             )
         else:
             logger.info(f'Form invalid. Errors: {form.errors}')
