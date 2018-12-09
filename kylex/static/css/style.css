@@ -555,9 +555,26 @@ header.default nav ul li.current-page a:before {
   background: #90a9cd;
   position: absolute;
   left: 50%;
-  bottom: -31px;
+  bottom: -55px;
   padding-left: 30%;
   margin-left: 0px;
+}
+.hashtag {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1;
+  margin-top: 1.2rem;
+  position: relative;
+  padding-left: 30%;
+}
+.ceremony-date sup {
+  font-size: 0.875rem;
 }
 
 body.home header {
@@ -2326,7 +2343,7 @@ SINGLE POST
     color: black;
   }
 
-  header span.ceremony-date {
+  header span.ceremony-date, header span.hashtag {
     color: black;
   }
 
