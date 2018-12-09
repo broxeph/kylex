@@ -7,8 +7,8 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 DEBUG = os.environ.get('DEBUG', False)
 
-# Allow all host headers
-ALLOWED_HOSTS = ['kylex-wedding.herokuapp.com', 'kylex.name']
+if not DEBUG:
+    ALLOWED_HOSTS = ['kylex-wedding.herokuapp.com', 'kylex.name']
 
 
 # Application definition
