@@ -5,18 +5,25 @@ from django.core.mail import EmailMessage
 from django.shortcuts import render
 from django.views import View
 
+from .constants import BRIDESMAIDS, GROOMSMEN
 from .forms import ContactForm
 
 logger = logging.getLogger(__name__)
 
 
 class Home(View):
+    context = {
+        'bridesmaids': BRIDESMAIDS,
+        'groomsmen': GROOMSMEN
+    }
+
     def get(self, request):
-        return render(request, 'home.html')
+        return render(request, 'home.html', self.context)
 
     def post(self, request):
         form = ContactForm(request.POST)
         if form.is_valid():
+            # Send email with contact form message
             logger.info(f'Sending email to {settings.EMAIL_HOST_USER}')
             email = EmailMessage(
                 subject=f"Wedding spam from {form.cleaned_data['name']}",
@@ -29,4 +36,4 @@ class Home(View):
         else:
             logger.info(f'Form invalid. Errors: {form.errors}')
 
-        return render(request, 'home.html')
+        return render(request, 'home.html', self.context)

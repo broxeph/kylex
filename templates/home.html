@@ -139,67 +139,16 @@
 		</nav>
 		<div id="bridesmaid-carousel" class="dg-container">
 			<div class="dg-wrapper">
-
-				<!-- begin bridesmaid image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat 50% center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="maid of honor">
-					<div>
-						<span class="guest-name">Angela Romero</span>
-						<span class="guest-title">MAID OF HONOUR</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end bridesmaid image -->
-
-				<!-- begin bridesmaid image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat 50% center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="bridesmaid">
-					<div>
-						<span class="guest-name">Sue Storm</span>
-						<span class="guest-title">Bridesmaid</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end bridesmaid image -->
-
-				<!-- begin bridesmaid image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat 50% center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="bridesmaid">
-					<div>
-						<span class="guest-name">Jean Grey</span>
-						<span class="guest-title">Bridesmaid</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end bridesmaid image -->
-
-				<!-- begin bridesmaid image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat 50% center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="bridesmaid">
-					<div>
-						<span class="guest-name">Diana Prince</span>
-						<span class="guest-title">Bridesmaid</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end bridesmaid image -->
-
-				<!-- begin bridesmaid image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat 50% center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="bridesmaid">
-					<div>
-						<span class="guest-name">Natasha Romanov</span>
-						<span class="guest-title">Bridesmaid</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end bridesmaid image -->
-
+        {% for bridesmaid in bridesmaids %}
+          <a href="#" style="background:url({{ bridesmaid.img }}) no-repeat 50% center; background-size:cover;">
+            <img src="{{ bridesmaid.img }}" alt="{{ bridesmaid.title }}">
+            <div>
+              <span class="guest-name">{{ bridesmaid.name }}</span>
+              <span class="guest-title">{{ bridesmaid.title }}</span>
+              <span class="guest-story">{{ bridesmaid.story }}</span>
+            </div>
+          </a>
+        {% endfor %}
 			</div><!-- End .dg-wrapper -->
 		</div><!-- End #bridesmaid-carousel -->
 		<div class="bridemaids-mobile-slider-wrap"><div class="bridemaids-mobile-slider"></div></div>
@@ -214,67 +163,16 @@
 		</nav>
 		<div id="groomsmen-carousel" class="dg-container">
 			<div class="dg-wrapper-g">
-
-				<!-- begin groomsman image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="groomsman">
-					<div>
-						<span class="guest-name">Nick Fury</span>
-						<span class="guest-title">Best Man</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end groomsman image -->
-
-				<!-- begin groomsman image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="groomsman">
-					<div>
-						<span class="guest-name">Peter Parker</span>
-						<span class="guest-title">Groomsman</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end groomsman image -->
-
-				<!-- begin groomsman image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="groomsman">
-					<div>
-						<span class="guest-name">Scott Summers</span>
-						<span class="guest-title">Groomsman</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end groomsman image -->
-
-				<!-- begin groomsman image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="groomsman">
-					<div>
-						<span class="guest-name">Tony Stark</span>
-						<span class="guest-title">Groomsman</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end groomsman image -->
-
-				<!-- begin groomsman image -->
-				<a href="#" style="background:url(https://placehold.it/429x294) no-repeat center; background-size:cover;">
-					<img src="https://placehold.it/429x294" alt="groomsman">
-					<div>
-						<span class="guest-name">Steve Rogers</span>
-						<span class="guest-title">Groomsman</span>
-						<span class="guest-story"> Lorem ipsum dolor sit amet, consectetur adipisci Lorem ipsum dolor sit amet, conse Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel ipsum cons
-	equat odictetur adipiscing elit.</span>
-					</div>
-				</a>
-				<!-- end groomsman image -->
-
+        {% for groomsman in groomsmen %}
+          <a href="#" style="background:url({{ groomsman.img }}) no-repeat 50% center; background-size:cover;">
+            <img src="{{ groomsman.img }}" alt="{{ groomsman.title }}">
+            <div>
+              <span class="guest-name">{{ groomsman.name }}</span>
+              <span class="guest-title">{{ groomsman.title }}</span>
+              <span class="guest-story">{{ groomsman.story }}</span>
+            </div>
+          </a>
+        {% endfor %}
 			</div><!-- End .dg-wrapper-g -->
 		</div><!-- End #groomsmen-carousel -->
 		<div class="groomsmen-mobile-slider-wrap"><div class="groomsmen-mobile-slider"></div></div>
@@ -303,8 +201,8 @@
 	<!-- Contact section -->
 	<section id="contact">
 		<div class="contact-form-wrap">
-			<h2>Contact</h2>  {# TODO: Hook up mail sender #}
-			<p class="contact-desc">Any further questions? Please send us a message in the comments box below.</p>
+			<h2>Contact</h2>
+			<p class="contact-desc">Any questions? Please send us a message in the comments box below.</p>
 			<form id="contact-form" action="#" method="post" data-abide>
         {% csrf_token %}
 				<div class="columns large-12">
