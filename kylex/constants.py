@@ -4,6 +4,8 @@ Data that was too unwieldy for views.py.
 If Heroku supported Python 3.7, we could put these in DataClasses.
 """
 
+GALLERY = ['dancing', 'kitchen', 'bibou', 'engagement', 'one-water', 'deb', 'sexpod']
+
 BRIDESMAIDS = [
     {
         'name': 'Carol Danvers',

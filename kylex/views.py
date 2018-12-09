@@ -5,7 +5,7 @@ from django.core.mail import EmailMessage
 from django.shortcuts import render
 from django.views import View
 
-from .constants import BRIDESMAIDS, GROOMSMEN
+from .constants import BRIDESMAIDS, GALLERY, GROOMSMEN
 from .forms import ContactForm
 
 logger = logging.getLogger(__name__)
@@ -14,7 +14,8 @@ logger = logging.getLogger(__name__)
 class Home(View):
     context = {
         'bridesmaids': BRIDESMAIDS,
-        'groomsmen': GROOMSMEN
+        'groomsmen': GROOMSMEN,
+        'gallery': [f"img/{image}.webp" for image in GALLERY]
     }
 
     def get(self, request):

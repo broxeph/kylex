@@ -182,13 +182,9 @@
 	<section id="couple-gallery">
 		<h2>Gallery</h2>
 		<div class="il-scattered-gallery">
-			<a href="#"><img src="{% static "img/dancing.webp" %}" alt=""></a>
-			<a href="#"><img src="{% static "img/kitchen.webp" %}" alt=""></a>
-			<a href="#"><img src="{% static "img/bibou.webp" %}" alt=""></a>
-			<a href="#"><img src="{% static "img/engagement.webp" %}" alt=""></a>
-			<a href="#"><img src="{% static "img/one-water.webp" %}" alt=""></a>
-			<a href="#"><img src="{% static "img/deb.webp" %}" alt=""></a>
-			<a href="#"><img src="{% static "img/sexpod.webp" %}" alt=""></a>
+      {% for image in gallery %}
+			  <a href="#"><img src="{% static image %}" alt=""></a>
+      {% endfor %}
 		</div>
 		<div class="couple-slideshow-wrap">
 			<ul id="couple-slideshow"></ul>
