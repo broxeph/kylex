@@ -4,7 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.getenv('DEBUG', False)
 
 if not DEBUG:
     ALLOWED_HOSTS = ['kylex-wedding.herokuapp.com', 'kylex.name']
@@ -71,10 +71,6 @@ LOGGING = {
     },
     'loggers': {
         '': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-        },
-        'django': {
             'handlers': ['console'],
             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
         },
