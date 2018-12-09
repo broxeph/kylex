@@ -479,7 +479,7 @@ HEADER
 header.default {
   width: 100%;
   height: 826px;
-  background: url("/static/img/header.jpg") center top no-repeat;
+  background: url("/static/img/header.webp") center top no-repeat;
   background-size: cover;
 }
 header.default nav {
@@ -644,7 +644,7 @@ RSVP SECTION
 #rsvp {
   width: 100%;
   height: 840px;
-  background: url("/static/img/our-story.jpg") center top no-repeat;
+  background: url("/static/img/our-story.webp") center top no-repeat;
   background-size: cover;
   padding-top: 7.5rem;
   position: relative;
@@ -708,7 +708,7 @@ COUNTDOWN SECTION
 #countdown {
   max-width: none;
   height: 689px;
-  background: url("/static/img/cheers.jpg") center top no-repeat;
+  background: url("/static/img/cheers.webp") center top no-repeat;
   background-size: cover;
   padding-top: 7.8125rem;
   position: relative;
@@ -764,7 +764,7 @@ SCHEDULE SECTION
 #schedule {
   width: 100%;
   height: 780px;
-  background: url("/static/img/barley-sheaf-outside.jpg") center top no-repeat;
+  background: url("/static/img/barley-sheaf-outside.webp") center top no-repeat;
   background-size: cover;
   padding-top: 9.5rem;
   position: relative;
@@ -1103,7 +1103,7 @@ CONTACT SECTION
 #contact {
   width: 100%;
   height: 976px;
-  background: url("/static/img/pillar.jpg") center top no-repeat;
+  background: url("/static/img/pillar.webp") center top no-repeat;
   background-size: cover;
   padding-top: 6.75rem;
   position: relative;
