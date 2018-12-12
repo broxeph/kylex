@@ -15,7 +15,7 @@ class Home(View):
     context = {
         'bridesmaids': BRIDESMAIDS,
         'groomsmen': GROOMSMEN,
-        'gallery': [f"img/{image}.webp" for image in GALLERY]
+        'gallery': [f"img/{image}.jpg" for image in GALLERY]
     }
 
     def get(self, request):
