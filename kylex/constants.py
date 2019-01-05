@@ -61,7 +61,7 @@ GROOMSMEN = [
     },
     {
         'name': 'Kyle Cullison',
-        'img': 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/34881920_10156508335812082_7825779516843753472_n.jpg?_nc_cat=105&_nc_ht=scontent-lga3-1.xx&oh=41f83036cb85186e97aaafa0f9150182&oe=5CA5C3CF',
+        'img': static('img/kyle.jpg'),
         'title': 'Groomsman',
         'story': '',
     },
