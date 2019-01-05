@@ -798,12 +798,12 @@ SCHEDULE SECTION
 #schedule .row {
   max-width: 600px;
 }
-#schedule .large-6 {
+#schedule .large-4 {
   text-align: center;
   margin-top: 2rem;
   max-width: 300px;
 }
-#schedule .large-6 > strong {
+#schedule .large-4 > strong {
   display: block;
   font-family: "Prata", serif;
   font-size: 1.125rem;
@@ -811,13 +811,13 @@ SCHEDULE SECTION
   color: black;
   margin-bottom: 1.25rem;
 }
-#schedule .large-6 > img {
+#schedule .large-4 > img {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 6px solid #f3f3f3;
 }
-#schedule .large-6 p {
+#schedule .large-4 p {
   font-family: "Lato", sans-serif;
   font-size: 0.75rem;
   font-weight: 400;
@@ -827,15 +827,15 @@ SCHEDULE SECTION
   margin-bottom: 0;
   line-height: 18px;
 }
-#schedule .large-6 p + p {
+#schedule .large-4 p + p {
   margin-top: 1.1875rem;
 }
-#schedule .large-6 a {
+#schedule .large-4 a {
   font-weight: 700;
   color: black;
   text-decoration: underline;
 }
-#schedule .large-6 a:hover {
+#schedule .large-4 a:hover {
   text-decoration: none;
 }
 
@@ -2497,7 +2497,7 @@ SINGLE POST
   #schedule {
     height: auto;
   }
-  #schedule .large-6 {
+  #schedule .large-4 {
     max-width: none;
   }
   .schedule-content-wrap {
@@ -2587,7 +2587,7 @@ SINGLE POST
     padding-top: 3.125rem;
   }
 
-  #schedule .large-6 {
+  #schedule .large-4 {
     margin-top: 2.5rem;
   }
 
