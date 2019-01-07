@@ -22,13 +22,13 @@ BRIDESMAIDS = [
     },
     {
         'name': 'Emily Maple',
-        'img': 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/43567979_10214687533674823_5410537132185878528_n.jpg?_nc_cat=107&_nc_ht=scontent-lga3-1.xx&oh=f3df2586096de9b948bbe7722c7c9b57&oe=5C8F1C84',
+        'img': static('img/emily.jpg'),
         'title': 'Bridesmaid',
         'story': '',
     },
     {
         'name': 'Lauren Ball',
-        'img': 'https://scontent-lga3-1.xx.fbcdn.net/v/t31.0-8/27500398_1863915210345197_3134240069504316129_o.jpg?_nc_cat=111&_nc_ht=scontent-lga3-1.xx&oh=c99b30f6f24cb135b1ebd1d336b58ef6&oe=5CAD62FB',
+        'img': static('img/lauren.jpg'),
         'title': 'Bridesmaid',
         'story': '',
     },
