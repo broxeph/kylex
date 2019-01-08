@@ -49,7 +49,7 @@ GROOMSMEN = [
     },
     {
         'name': 'Ben Glenn',
-        'img': 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/28059052_10213733029854860_8151471974392820739_n.jpg?_nc_cat=106&_nc_ht=scontent-lga3-1.xx&oh=b74e3c6b1c9d4152e30f747efd90dd8b&oe=5C9586A5',
+        'img': static('img/ben.jpg'),
         'title': 'Groomsman',
         'story': '',
     },
