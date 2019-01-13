@@ -188,7 +188,7 @@ AFTER DOCUMENT LOADS
 --------------------------------------------------------------*/
 $(window).load (function(){
 
-  // $(window).scroll();
+  $(window).scroll();
 
   if( $('body').hasClass('home') ){
 
