@@ -589,9 +589,10 @@ COUPLE SECTION
 #couple {
   max-width: none;
   height: 400px;
-  background-color: #ddd;
   margin-top: 826px;
   position: relative;
+  background: url('../img/bridesmaids-bg.jpg') center top no-repeat;
+  background-size: cover;
   z-index: 2;
 }
 #couple .columns.large-12 {
@@ -868,8 +869,9 @@ BRIDESMAIDS GALLERY
   margin-top: 0;
   padding-top: 5.125rem;
   height: 723px;
-  background-color: #ccc;
   position: relative;
+  background: url('../img/bridesmaids-bg.jpg') center top no-repeat;
+  background-size: cover;
 }
 #bridesmaid-gallery h2 {
   color: #000;
@@ -895,8 +897,9 @@ GROOMSMEN GALLERY
   margin-top: 0;
   padding-top: 5.375rem;
   height: 723px;
-  background-color: #444;
   position: relative;
+  background: url('../img/groomsmen-bg.jpg') center top no-repeat;
+  background-size: cover;
 }
 #groomsmen-gallery h2 {
   color: #fff;
@@ -921,10 +924,11 @@ COUPLE GALLERY
 #couple-gallery {
   width: 100%;
   height: 1198px;
-  background-color: #ccc;
   padding-top: 5.375rem;
   text-align: center;
   position: relative;
+  background: url('../img/gallery-bg.jpg') center top no-repeat;
+  background-size: cover;
   z-index: 2;
 }
 #couple-gallery .close-btn {
