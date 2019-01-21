@@ -43,7 +43,7 @@ BRIDESMAIDS = [
 GROOMSMEN = [
     {
         'name': 'Justin Ball',
-        'img': 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/40576635_2343442069005052_408757148571402240_o.jpg?_nc_cat=101&_nc_ht=scontent-lga3-1.xx&oh=16517a946e5815561b97988d81a185d5&oe=5C9C0B91',
+        'img': static('img/justin.jpg'),
         'title': 'Best Man',
         'story': '',
     },
@@ -55,7 +55,7 @@ GROOMSMEN = [
     },
     {
         'name': 'Frankie Maple',
-        'img': 'https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/15032096_10153840577810946_1198070499810869110_n.jpg?_nc_cat=111&_nc_ht=scontent-lga3-1.xx&oh=100dbf082c27cab101f08bfde9b5dfc9&oe=5CA55733',
+        'img': static('img/frankie.jpg'),
         'title': 'Groomsman',
         'story': '',
     },
