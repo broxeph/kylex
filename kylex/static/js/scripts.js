@@ -1,6 +1,5 @@
-$(document).foundation();
+jQuery(document).foundation();
 
-// jQuery Strict Mode
 jQuery(function($){
 "use strict";
 
@@ -14,15 +13,10 @@ $(document).ready(function(){
   var weddDay = new Date(2019, 9-1, 21);// YYYY, M, D -- no leading zeros
   $('#default-countdown').countdown({until: weddDay, format: 'YOD'});
 
-  var navItems = $('header nav').html();// Get navigation links from main menu
-  $('.mobile-menu-container').append(navItems);// Append them to the side navigation
+  $('.blocking').hide();// Hide fixed nav on load
 
-  $('section').each(function(){
-    $(this).append('<div class="blocking"></div>');
-  });
-
-  $('<header class="fixed"><nav>'+$('header nav').html()+'</nav></header>').insertAfter('header.default');// Clone the default nav and create a fixed nav
-  $('header.fixed, .blocking').hide();// Hide fixed nav on load
+  $('.bridemaids-mobile-slider, .groomsmen-mobile-slider, .couple-mobile-slider').append('<ul class="slides"></ul>');
+  $('#bridesmaids-carousel a div, #groomsmen-carousel a div').addClass('slide-text');
 
   $(document).on('click','.mobile-menu-btn',function(){
     $(this).find('span').toggleClass('active');// Add active class to hamburger icon
@@ -30,13 +24,17 @@ $(document).ready(function(){
     return false;
   });
 
-  $(document).on('click','header nav a',function(){
-      goToByScroll($(this).attr('href'));// Scroll to the clicked section
-      return false;
-  });
-  $(document).on('click','.mobile-menu-container a',function(){
-      mobileGoToByScroll($(this).attr('href'));// Scroll to the clicked section (MOBILE)
-      return false;
+  $(document).on('click','.scroll-to',function(){
+    var href = $(this).find('a').attr('href'), hash = href.substr(href.indexOf('#'));
+    winWidth = $(window).width();
+    if ( winWidth > 1024 ) {
+      goToByScroll(hash);// Scroll to the clicked section
+    }
+    else {
+      $('.mobile-menu-btn span, .mobile-menu-container').removeClass('active');
+      goToByScroll(hash, 0);// Scroll to the clicked section
+    }
+    return false;
   });
 
   $(document).on('click','.dg-wrapper a, .dg-wrapper-g a',function(){
@@ -58,7 +56,7 @@ $(document).ready(function(){
 
   // Launch the gallery popup
   $(document).on('click','#gallery-launcher',function(){
-    $('.couple-slideshow-wrap').append('<a class="close-btn"><em>X</em>Close</a>');
+    $('.couple-slideshow-wrap').append('<a class="close-btn" title="Click to close"><em>X</em>Close</a>');
     $('.blocking').fadeIn(500);
     $('.couple-slideshow-wrap').css('z-index','2001');
     goToByScroll('#couple-slideshow');
@@ -68,105 +66,90 @@ $(document).ready(function(){
     return false;
   });
 
-  $(document).on('click','.close-btn',function(){
+  $(document).on('click','.close-btn, .couple-gallery .blocking',function(){
     $('.couple-slideshow-wrap').removeClass('visible');
     setTimeout(function(){
       $('.couple-slideshow-wrap').css('z-index','');
     }, 500);
-    $(this).fadeOut(500).delay(500).remove();
+    $('.couple-gallery .close-btn').fadeOut(500).delay(500).remove();
     $('.blocking').fadeOut(500);
     return false;
   });
 
-  $('#bridesmaid-carousel').gallery();
+  $('#bridesmaids-carousel').gallery();
   $('#groomsmen-carousel').ggallery();
   $('#couple-gallery').ilScatteredGallery();
-
-  // Make header bg full height of screen
-  if(winWidth < 641){
-    $('.blog header, .single header').css('height', winHeight+'px');
-  }
 
   // SCROLL FUNCTIONS
   $(window).scroll(function() {
 
-    // console.log($(window).scrollTop());
+    if( $('body').hasClass('home') ){
+      if( $(window).scrollTop() > 349 ){
+        $('.fixed-header').addClass('visible');
+      }
+      else{
+        $('.fixed-header').removeClass('visible');
+      }
+    }
+    else{
+      if( $(window).scrollTop() > 107 ){
+        $('.fixed-header').addClass('visible');
+      }
+      else{
+        $('.fixed-header').removeClass('visible');
+      }
+    }
+
+    if( $('body').hasClass('home') ){
+
+      if( $('#recent-posts').exists() ){
+        if( $('#recent-posts').isOnScreen() ){
+          $('#recent-posts .blog-post').addClass('on-screen');
+        }
+      }
+
+      if( $('#rsvp').exists() ){
+        if( $('#rsvp').isOnScreen() ){
+          $('.rsvp-form-wrap').addClass('on-screen');
+        }
+      }
+
+      if( $('#schedule').exists() ){
+        if( $('#schedule').isOnScreen() ){
+          $('.schedule-content-wrap').addClass('on-screen');
+        }
+      }
+
+      if( $('#contact').exists() ){
+        if( $('#contact').isOnScreen() ){
+          $('.contact-form-wrap').addClass('on-screen');
+        }
+      }
+
+    }
+
+    $('section').each(function(){
+      var currentSection = $(this);
+      var currentId = $(this).attr('id');
+      // For each section that comes into view add active class to corresponding side nav link
+      if(currentSection.isOnScreen()){
+        $('.scroll-to').each(function(){
+          var currElem = $(this);
+          var href = $(this).find('a').attr('href'), hash = href.substr(href.indexOf('#')+1);
+          if( currentId == hash ){
+            currElem.find('a').addClass('active');
+          }
+          else{
+            currElem.find('a').removeClass('active');
+          }
+        });
+      }
+    });
+
+    parallaxScroll();
 
     if(winWidth > 1024){
-
-      parallaxScroll();
-
-      $('section').each(function(){
-        var currentSection = $(this);
-        var currentId = $(this).attr('id');
-        // For each section that comes into view add active class to corresponding side nav link
-        if(currentSection.isOnScreen()){
-          $('a[href="#'+currentId+'"]').closest('li').siblings().find('a').removeClass('active');
-          $('a[href="#'+currentId+'"]').addClass('active');
-        }
-      });
-
-      if( $('body').hasClass('home') ){
-
-        if( $('#recent-posts').exists() ){
-          if( $('#recent-posts').isOnScreen() ){
-            $('#recent-posts .blog-post').addClass('on-screen');
-          }
-        }
-
-        if( $('#rsvp').exists() ){
-          if( $('#rsvp').isOnScreen() ){
-            $('.rsvp-form-wrap').addClass('on-screen');
-          }
-        }
-
-        if( $('#schedule').exists() ){
-          if( $('#schedule').isOnScreen() ){
-            $('.schedule-content-wrap').addClass('on-screen');
-          }
-        }
-
-        if( $('#contact').exists() ){
-          if( $('#contact').isOnScreen() ){
-            $('.contact-form-wrap').addClass('on-screen');
-          }
-        }
-
-      }
-
-      if( $('body').hasClass('blog') || $('body').hasClass('single') ){
-        if( $(window).scrollTop() >= 83 ){
-          $('header.fixed').fadeIn(400);
-        }
-        else{
-          $('header.fixed').fadeOut(300);
-        }
-      }
-
-      if( $('body').hasClass('home') ){
-        if( $(window).scrollTop() >= 350 ){
-          $('header.fixed').fadeIn(400);
-        }
-        else{
-          $('header.fixed').fadeOut(300);
-        }
-      }
-
     }// end winWidth > 1024
-
-    if(winWidth < 1025){
-
-      $('section').each(function(){
-        var currentSection = $(this);
-        var currentId = $(this).attr('id');
-        // For each section that comes into view add active class to corresponding side nav link
-        if(currentSection.isOnScreen()){
-          $('.mobile-menu-container a[href="#'+currentId+'"]').closest('li').siblings().find('a').removeClass('active');
-          $('.mobile-menu-container a[href="#'+currentId+'"]').addClass('active');
-        }
-      });
-
-    }// end winWidth < 1025
 
   });// End window.scroll()
 
@@ -175,9 +158,9 @@ $(document).ready(function(){
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
 
-      location.reload();
+      $('.recent-posts .blog-post .post-text').css('height', '').equalHeights();
 
-    }, 250);
+    }, 1100);
 
   });// End window.resize()
 
@@ -190,6 +173,8 @@ $(window).load (function(){
 
   $(window).scroll();
 
+  $('.recent-posts .blog-post .post-text').equalHeights();
+
   if( $('body').hasClass('home') ){
 
     // Begin "create sliders for all the galleries"
@@ -197,41 +182,65 @@ $(window).load (function(){
     var bridesmaidsSlider = [], groomsmenSlider = [], coupleSlider = [], slider, sliderTwo, sliderThree, coupleSlideshow;
 
     // Bridesmaids
-    $('#bridesmaid-carousel a img').each(function(){
+    /* $('#bridesmaids-carousel a img').each(function(){
       bridesmaidsSlider.push($(this).attr('src'));
     });
     for ( var i = 0, l = bridesmaidsSlider.length; i < l; i++ ) {
-      $('.bridemaids-mobile-slider').append('<img src="'+bridesmaidsSlider[ i ]+'" alt="" />')
+      $('.bridemaids-mobile-slider .slides').append('<li><img src="'+bridesmaidsSlider[ i ]+'" alt=""></li>');
     }
-    if( $('#bridesmaid-carousel').exists() ){
-      slider = $('.bridemaids-mobile-slider').bxSlider({
-        auto: true,
-        mode: 'horizontal',
-        speed: 1000,
-        pager: false,
-        controls: false,
-        pause: 4000
+    if( $('#bridesmaids-carousel').exists() ){
+      $('.bridemaids-mobile-slider').flexslider({
+        animation: "slide",
+        slideshow: false,
+        controlNav: false,
       });
-      slider.startAuto();
+    } */
+    $('#bridesmaids-carousel a').each(function(){
+      var currElem = $(this);
+      var imgSrc = currElem.find('img').attr('src');
+      var slideText = currElem.find('.slide-text').html();
+      bridesmaidsSlider.push({"img":imgSrc, "slide_text":slideText});
+    });
+    for ( var i = 0, l = bridesmaidsSlider.length; i < l; i++ ) {
+      $('.bridemaids-mobile-slider .slides').append(
+        '<li>' +
+          '<img src="' + bridesmaidsSlider[i].img + '" alt="">' +
+          bridesmaidsSlider[i].slide_text +
+        '</li>'
+      );
+    }
+    if( $('#bridesmaids-carousel').exists() ){
+      $('.bridemaids-mobile-slider').flexslider({
+        animation: "slide",
+        slideshow: false,
+        controlNav: false,
+      });
     }
 
+
     // Groomsmen
-    $('#groomsmen-carousel a img').each(function(){
-      groomsmenSlider.push($(this).attr('src'));
+    $('#groomsmen-carousel a').each(function(){
+      // groomsmenSlider.push($(this).attr('src'));
+      var currElem = $(this);
+      var imgSrc = currElem.find('img').attr('src');
+      var slideText = currElem.find('.slide-text').html();
+      groomsmenSlider.push({"img":imgSrc, "slide_text":slideText});
     });
     for ( var i = 0, l = groomsmenSlider.length; i < l; i++ ) {
-      $('.groomsmen-mobile-slider').append('<img src="'+groomsmenSlider[ i ]+'" alt="" />')
+      // $('.groomsmen-mobile-slider .slides').append('<li><img src="'+groomsmenSlider[ i ]+'" alt=""></li>');
+      $('.groomsmen-mobile-slider .slides').append(
+        '<li>' +
+          '<img src="' + groomsmenSlider[i].img + '" alt="">' +
+          groomsmenSlider[i].slide_text +
+        '</li>'
+      );
     }
     if( $('#groomsmen-carousel').exists() ){
-      sliderTwo = $('.groomsmen-mobile-slider').bxSlider({
-        auto: true,
-        mode: 'horizontal',
-        speed: 1000,
-        pager: false,
-        controls: false,
-        pause: 4100
+      $('.groomsmen-mobile-slider').flexslider({
+        animation: "slide",
+        slideshow: false,
+        controlNav: false,
       });
-      sliderTwo.startAuto();
     }
 
     // Couple
@@ -239,17 +248,15 @@ $(window).load (function(){
       coupleSlider.push($(this).attr('src'));
     });
     for ( var i = 0, l = coupleSlider.length; i < l; i++ ) {
-      $('.couple-mobile-slider').append('<img src="'+coupleSlider[ i ]+'" alt="" />')
+      $('.couple-mobile-slider .slides').append('<li><img src="'+coupleSlider[ i ]+'" alt=""></li>');
     }
-    sliderThree = $('.couple-mobile-slider').bxSlider({
-      auto: true,
-      mode: 'horizontal',
-      speed: 1000,
-      pager: false,
-      controls: false,
-      pause: 4200
+
+    $('.couple-mobile-slider > img').remove();
+    $('.couple-mobile-slider').flexslider({
+      animation: "slide",
+      slideshow: false,
+      controlNav: false,
     });
-    sliderThree.startAuto();
 
     // End "create sliders for all the galleries"
 
@@ -265,7 +272,6 @@ $(window).load (function(){
       minSlides: 5,
       maxSlides: 5,
       slideWidth: 178,
-      // slideMargin: 3,
       slideMargin: 0,
       speed: 750,
       pager: false,
@@ -282,8 +288,6 @@ $(window).load (function(){
   }// end if body.home
 
 });
-
-});// End jQuery(function($)
 
 /*--------------------------------------------------------------
 THE FUNCTIONS
@@ -365,7 +369,7 @@ jQuery.fn.equalHeights = function(){
     colHeights.push(singleCol);// Push the single height into the array
     newHeight = Math.max.apply(Math,colHeights);// Get the tallest column from the array
   });
-  colSelector.css('height', newHeight+'px');// Apply the tallest height to all columns
+  $(colSelector).css('height', newHeight+'px');// Apply the tallest height to all columns
 }
 
 /**
@@ -373,36 +377,17 @@ jQuery.fn.equalHeights = function(){
   * @param int id - the id of the section to scroll to
   * @return none
 */
-function goToByScroll(id){
+function goToByScroll(id, scrollPadding = 106){
   var scrollAmount = $(id).offset().top;
-  if( id == '#couple' ){
+  var scrollPadding = scrollPadding;
+  if( scrollPadding == 0 ){
     $('html,body').animate({
-      // scrollTop: 720},
-      scrollTop: 610},
+      scrollTop: scrollAmount},
     'slow');
   }
   else{
     $('html,body').animate({
-      scrollTop: (scrollAmount - 107)},
-    'slow');
-  }
-}
-
-/**
-  * @desc scroll to the specified anchor section (MOBILE)
-  * @param int id - the id of the section to scroll to (MOBILE)
-  * @return none
-*/
-function mobileGoToByScroll(id){
-  var scrollAmount = $(id).offset().top;
-  if( id == '#couple' ){
-    $('html,body').animate({
-      scrollTop: 660},
-    'slow');
-  }
-  else{
-    $('html,body').animate({
-      scrollTop: (scrollAmount - 60)},
+      scrollTop: (scrollAmount - scrollPadding)},
     'slow');
   }
 }
@@ -413,19 +398,20 @@ function mobileGoToByScroll(id){
   * @return none
 */
 function parallaxScroll(){
-  var scrolled = $(window).scrollTop();
+  // var scrolled = $(window).scrollTop();
+  // var winWidth = $(window).width();
 
   if( $('body').hasClass('home') ){
-    $('header.default nav').css('margin-top', '-' + Math.round( (scrolled * 0.3) ) + 'px');
-    $('#countdown h2').css('top', Math.round(515 - (scrolled * 0.3) ) + 'px');
-    $('#default-countdown').css('top', Math.round(515 - (scrolled * 0.3) ) + 'px');
+    $('.main-navigation, .site-branding').css('margin-top', '-' + Math.round( ($(window).scrollTop() * 0.3) ) + 'px');
   }
 
-  if( $('body').hasClass('blog') || $('body').hasClass('single') ){
-    $('h1').css({
-      'position' : 'relative',
-      'top' : '-' + Math.round( (scrolled * 0.3) ) + 'px'
-    });
-  }
+  // if( $('body').hasClass('blog') || $('body').hasClass('single') ){
+  //   $('h1').css({
+  //     'position' : 'relative',
+  //     'top' : '-' + Math.round( (scrolled * 0.3) ) + 'px'
+  //   });
+  // }
 
 }
+
+});// End jQuery(function($)
