@@ -2181,6 +2181,12 @@ SINGLE POST
   .couple-mobile-slider-wrap {
     display: block;
   }
+  .groomsmen-mobile-slider-wrap .flex-active-slide {
+    color: #fff;
+  }
+  .couple-mobile-slider-wrap .flex-direction-nav {
+    text-align: left;
+  }
 
   #bridesmaids-carousel,
   #groomsmen-carousel,
