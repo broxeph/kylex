@@ -1,5 +1,7 @@
-Django==2.2.2
+Django==2.2.3
 # Web server
 gunicorn==19.9.0
 # Static files, with Brotli compression
 whitenoise[brotli]==4.1.2
+# shell_plus
+django-extensions==2.1.9

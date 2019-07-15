@@ -16,6 +16,7 @@ if not DEBUG:
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'kylex',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
