@@ -2,7 +2,9 @@ import logging
 
 from django.conf import settings
 from django.core.mail import EmailMessage
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from django.views import View
 
 from .constants import BRIDESMAIDS, GALLERY, GROOMSMEN
@@ -37,4 +39,4 @@ class Home(View):
         else:
             logger.info(f'Form invalid. Errors: {form.errors}')
 
-        return render(request, 'home.html', self.context)
+        return HttpResponseRedirect(reverse('home'))
